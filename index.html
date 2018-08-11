@@ -23,9 +23,9 @@
 	<script>
 	function convert() {
 		document.getElementById("resultTextBox").value = '';
-	    document.getElementById("goHentai").setAttribute("disabled",'');
+		document.getElementById("goHentai").setAttribute("disabled",'');
 		
-	    var source = document.getElementById("urlTextBox").value;
+	    var source = document.getElementById("urlTextBox").value.replace(" ", "");
 	    var result = '';
 	   
 		if (source.length == 0) { alert('未輸入網址'); return;} 
