@@ -47,7 +47,7 @@
 				'event_category': 'Success',
 				'event_label' : source,
 				'value': 1,
-				'non_interaction': false
+				'non_interaction': true
 				});
 			}
 			else 
@@ -56,7 +56,7 @@
 				'event_category': 'Fail',
 				'event_label' : source,
 				'value': 1,
-				'non_interaction': false
+				'non_interaction': true
 				});
 				document.getElementById("goHentai").firstChild.data = '網址非http開頭，無法發車';
 			}
@@ -71,7 +71,7 @@
 	}
 
 	function referrerHentai() {
-		gtag('event', 'GoGoGo', { 'event_category': document.getElementById("resultTextBox").value, 'value': 1, 'non_interaction': false });
+		gtag('event', 'GoGoGo', { 'event_category': document.getElementById("resultTextBox").value, 'value': 1, 'non_interaction': true });
 		window.open( document.getElementById("resultTextBox").value);
 	}
 	</script>
