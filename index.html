@@ -15,7 +15,7 @@
 <body style="background-color:powderblue">	
 	<h3 align="center">原網址: <input id="urlTextBox" size="100" type="text"><br>
 	<br>
-	<button onclick="convert()">轉換</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="clear()">清除</button></h3>
+	<button onclick="convert()">轉換</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="clearForm()">重製</button></h3>
 	<h3 align="center">轉換後的網址: <input id="resultTextBox" size="100" type="text"><br>
 	<br>
 	<button disabled id="goHentai" onclick="referrerHentai()">轉對了嗎?發車嘍</button></h3>
@@ -63,10 +63,11 @@
 	    }
 	}
 	
-	function clear() {
+	function clearForm() {
 		document.getElementById("urlTextBox").value = '';
 		document.getElementById("resultTextBox").value = '';
 	    document.getElementById("goHentai").setAttribute("disabled",'');
+		document.getElementById("goHentai").firstChild.data = '轉對了嗎?發車嘍';
 	}
 
 	function referrerHentai() {
