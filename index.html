@@ -60,7 +60,8 @@
 	}
 
 	function referrerHentai() {
-	   window.open( document.getElementById("resultTextBox").value);
+		gtag('event', 'GoGoGo', { 'event_category': document.getElementById("resultTextBox").value });
+		window.open( document.getElementById("resultTextBox").value);
 	}
 	</script>
 </body>
