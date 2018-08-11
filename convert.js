@@ -27,6 +27,11 @@ function convert() {
         if (result.startsWith("http")) {
             document.getElementById("goHentai").firstChild.data = '轉對了嗎?發車嘍';
             document.getElementById("goHentai").removeAttribute("disabled");
+			dataLayer.push({
+				"event": "Success",
+				"Source": source,
+				"Result": result
+			})
             /*gtag('event', 'ConvertURL', {
                 'event_category': 'Success',
                 'event_label': source,
@@ -35,6 +40,10 @@ function convert() {
                 'non_interaction': false
             });*/
         } else {
+			dataLayer.push({
+				"event": "Fail",
+				"Source": source
+			})
             /*gtag('event', 'ConvertURL', {
                 'event_category' : 'Fail',
                 'event_label' : source,
@@ -55,11 +64,16 @@ function resetForm() {
 }
 
 function referrerHentai() {
+	var URL = document.getElementById("resultTextBox").value;
+	dataLayer.push({
+				"event": "GoGoGo",
+				"Source": URL
+			})
     /*gtag('event', 'GoGoGo', {
         'event_category': document.getElementById("resultTextBox").value,
         'value': 1,
 		'transport_type': 'beacon',
         'non_interaction': false
     });*/
-    window.open(document.getElementById("resultTextBox").value);
+    window.open(URL);
 }
