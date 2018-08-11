@@ -11,9 +11,8 @@
 
 		gtag('config', 'UA-123786627-1');
 	</script>
-
 </head>
-<body style="background-color:powderblue">
+<body style="background-color:powderblue">	
 	<h3 align="center">原網址: <input id="urlTextBox" size="100" type="text"><br>
 	<br>
 	<button onclick="convert()">轉換</button></h3>
@@ -47,10 +46,10 @@
 			'non_interaction': true
 			});
 	        if (result.startsWith("http")) {
-				document.getElementById("goHentai").setAttribute("value", '轉對了嗎?發車嘍');
+				document.getElementById("goHentai").firstChild.data = '轉對了嗎?發車嘍';
 				document.getElementById("goHentai").removeAttribute("disabled");
 			}
-			else document.getElementById("goHentai").setAttribute("value", '網址非http開頭，無法發車');
+			else document.getElementById("goHentai").firstChild.data = '網址非http開頭，無法發車';
 	    }
 	}
 
