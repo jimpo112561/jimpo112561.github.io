@@ -9,8 +9,8 @@ function convert() {
         alert('未輸入網址');
         return;
     }
-    if (!source.startsWith("http"))
-        if (!confirm('原網址非http開頭，請確認是否繼續')) return;
+    if (!source.startsWith("https://"))
+        if (confirm('原網址非https開頭，是否要自動新增上去')) source = 'https://' + source;
 
     for (var i = 0; i < source.length; i++) {
         var charInt = source.charCodeAt(i);
@@ -24,7 +24,7 @@ function convert() {
 
     if (result.length != 0) {
         document.getElementById("resultTextBox").value = result;
-        if (result.startsWith("http")) {
+        if (result.startsWith("https://")) {
             document.getElementById("goHentai").firstChild.data = '轉對了嗎?發車嘍';
             document.getElementById("goHentai").removeAttribute("disabled");
             gtag('event', 'ConvertURL', {
@@ -40,7 +40,7 @@ function convert() {
 				'transport_type': 'beacon',
                 'non_interaction': false
             });
-            document.getElementById("goHentai").firstChild.data = '網址非http開頭，無法發車';
+            document.getElementById("goHentai").firstChild.data = '網址非https://開頭，無法發車';
         }
     }
 }
