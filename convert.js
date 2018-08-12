@@ -27,17 +27,16 @@ function convert() {
         if (result.startsWith("http")) {
             document.getElementById("goHentai").firstChild.data = '轉對了嗎?發車嘍';
             document.getElementById("goHentai").removeAttribute("disabled");
-            gtag('event', 'Success', {
-                'event_category' : source,
-				'transport_type': 'beacon',
-                'non_interaction': false
-            });
+			dataLayer.push({
+				"event": "Success",
+				"source": source,
+				'result': result
+			});
         } else {
-            gtag('event', 'Fail', {
-                'event_category' : source,
-				'transport_type': 'beacon',
-                'non_interaction': false
-            });
+			dataLayer.push({
+				"event": "Fail",
+				"source": source
+			});
             document.getElementById("goHentai").firstChild.data = '網址非http開頭，無法發車';
         }
     }
@@ -52,10 +51,9 @@ function resetForm() {
 
 function referrerHentai() {
 	var URL = document.getElementById("resultTextBox").value;
-    gtag('event', 'GoGoGo', {
-        'event_category': URL,
-		'transport_type': 'beacon',
-        'non_interaction': false
+	dataLayer.push({
+        "event": "GoGoGo",
+        "source": URL
     });
     window.open(URL);
 }
