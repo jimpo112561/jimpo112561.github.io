@@ -30,14 +30,14 @@ function convert() {
             gtag('event', 'ConvertURL', {
                 'event_category': 'Success',
                 'event_label': source,
-				'transport_type': 'beacon',
+		'transport_type': 'beacon',
                 'non_interaction': false
             });
         } else {
             gtag('event', 'ConvertURL', {
                 'event_category' : 'Fail',
-				'event_label' : source,
-				'transport_type': 'beacon',
+		'event_label' : source,
+		'transport_type': 'beacon',
                 'non_interaction': false
             });
             document.getElementById("goHentai").firstChild.data = '網址非https://開頭，無法發車';
@@ -56,7 +56,7 @@ function referrerHentai() {
 	var URL = document.getElementById("resultTextBox").value;
     gtag('event', 'GoGoGo', {
         'event_category': URL,
-		'transport_type': 'beacon',
+	'transport_type': 'beacon',
         'non_interaction': false
     });
     window.open(URL);
