@@ -36,7 +36,7 @@ function convert() {
         } else {
             gtag('event', 'ConvertURL', {
                 'event_category' : 'Fail',
-                'event_label' : source,
+				'event_label' : source,
 				'transport_type': 'beacon',
                 'non_interaction': false
             });
