@@ -27,30 +27,30 @@ function convert() {
         if (result.startsWith("http")) {
             document.getElementById("goHentai").firstChild.data = '轉對了嗎?發車嘍';
             document.getElementById("goHentai").removeAttribute("disabled");
-			dataLayer.push({
+			/*dataLayer.push({
 				"event": "Success",
 				"Source": source,
 				"Result": result
-			})
-            /*gtag('event', 'ConvertURL', {
+			});*/
+            gtag('event', 'ConvertURL', {
                 'event_category': 'Success',
                 'event_label': source,
                 'value': 1,
 				'transport_type': 'beacon',
                 'non_interaction': false
-            });*/
+            });
         } else {
-			dataLayer.push({
+			/*dataLayer.push({
 				"event": "Fail",
 				"Source": source
-			})
-            /*gtag('event', 'ConvertURL', {
+			});*/
+            gtag('event', 'ConvertURL', {
                 'event_category' : 'Fail',
                 'event_label' : source,
                 'value': 1,
 				'transport_type': 'beacon',
                 'non_interaction': false
-            });*/
+            });
             document.getElementById("goHentai").firstChild.data = '網址非http開頭，無法發車';
         }
     }
@@ -66,14 +66,14 @@ function resetForm() {
 function referrerHentai() {
 	var URL = document.getElementById("resultTextBox").value;
 	dataLayer.push({
-				"event": "GoGoGo",
-				"Source": URL
-			})
-    /*gtag('event', 'GoGoGo', {
+		"event": "GoGoGo",
+		Source": URL
+	});
+    gtag('event', 'GoGoGo', {
         'event_category': document.getElementById("resultTextBox").value,
         'value': 1,
 		'transport_type': 'beacon',
         'non_interaction': false
-    });*/
+    });
     window.open(URL);
 }
