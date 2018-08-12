@@ -67,7 +67,7 @@ function referrerHentai() {
 	var URL = document.getElementById("resultTextBox").value;
 	dataLayer.push({
 		"event": "GoGoGo",
-		Source": URL
+		"Source": URL
 	});
     gtag('event', 'GoGoGo', {
         'event_category': document.getElementById("resultTextBox").value,
