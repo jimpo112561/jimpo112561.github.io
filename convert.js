@@ -65,12 +65,12 @@ function resetForm() {
 
 function referrerHentai() {
 	var URL = document.getElementById("resultTextBox").value;
-	dataLayer.push({
+	/*dataLayer.push({
 		"event": "GoGoGo",
 		"Source": URL
-	});
+	});*/
     gtag('event', 'GoGoGo', {
-        'event_category': document.getElementById("resultTextBox").value,
+        'event_category': URL,
         'value': 1,
 		'transport_type': 'beacon',
         'non_interaction': false
