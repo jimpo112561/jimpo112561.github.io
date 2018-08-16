@@ -76,3 +76,41 @@ function referrerHentai() {
 	}
 	catch { alert('未選擇網址');  return; }    
 }
+
+function fastConvert() {
+    var txt = "";
+    if (window.getSelection) {
+        txt = window.getSelection()
+    } else if (document.getSelection) {
+        txt = document.getSelection()
+    } else if (document.selection) {
+        txt = document.selection.createRange().text
+    }
+    var source = new String(txt);
+    if (source == 0) {
+        alert('未選取網址\n將使用目前瀏覽的網址');
+        source = document.documentURI
+    }
+    var result = '';
+    if (!source.startsWith("https://"))
+        if (confirm('原網址非https開頭，是否要自動新增上去')) source = 'https://' + source;
+    for (var j = 0; j < source.length; j++) {
+        var charInt = source.charCodeAt(j);
+        if (charInt == 37) {
+            j += 2;
+            continue
+        }
+        if (charInt == 38 || (charInt >= 45 && charInt <= 58) || charInt == 61 || charInt == 63 || (charInt >= 65 && charInt <= 90) || (charInt >= 97 && charInt <= 122) && (charInt < 0x4E00 || charInt > 0x9FA5)) result += String.fromCharCode(charInt)
+    }
+    if (result.length != 0) {
+        if (result.startsWith("https://")) {
+            var clip_area = document.createElement('textarea');
+            clip_area.textContent = result;
+            document.body.appendChild(clip_area);
+            clip_area.select();
+            document.execCommand('copy');
+            clip_area.remove();
+            if (confirm('轉換後網址為: ' + result + '\n已複製到剪貼簿\n是否要開新視窗瀏覽?')) window.open(result)
+        }
+    }
+})()
