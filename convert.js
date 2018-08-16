@@ -77,7 +77,7 @@ function referrerHentai() {
 	catch { alert('未選擇網址');  return; }    
 }
 
-function fastConvert() {
+export function fastConvert() {
     var txt = "";
     if (window.getSelection) {
         txt = window.getSelection()
