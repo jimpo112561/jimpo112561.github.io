@@ -113,4 +113,4 @@ function fastConvert() {
             if (confirm('轉換後網址為: ' + result + '\n已複製到剪貼簿\n是否要開新視窗瀏覽?')) window.open(result)
         }
     }
-})()
+})
