@@ -25,8 +25,8 @@ function convert() {
                 j += 2;
                 continue;
             }
-            if (charInt == 38 || (charInt >= 45 && charInt <= 58) || charInt == 61 || charInt == 63 || (charInt >= 65 && charInt <= 90) || (charInt >= 97 && charInt <= 122) && (charInt < 0x4E00 || charInt > 0x9FA5))
-                result += String.fromCharCode(charInt);
+			if (charInt == 38 || (charInt >= 45 && charInt <= 58) || charInt == 61 || charInt == 63 || (charInt >= 65 && charInt <= 90) || charInt == 95 || (charInt >= 97 && charInt <= 122)) 
+				result += String.fromCharCode(charInt);
         }
 
         if (result.length != 0) {
@@ -64,7 +64,7 @@ function resetForm() {
 }
 
 function referrerHentai() {
-	try {
+	try	{
 		var listbox = document.getElementById("resultListBox");
 		var URL = listbox.options[listbox.selectedIndex].text;
 		gtag('event', 'GoGoGo', {
