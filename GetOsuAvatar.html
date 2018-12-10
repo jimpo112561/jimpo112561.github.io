@@ -3,7 +3,7 @@
         <script type="text/javascript">
             window.onload = function() {
               const urlParams = new URLSearchParams(window.location.search);
-				        var userid = urlParams.get('userid');
+				        var userid = urlParams.get('userid').replace("\"", "");
                 document.getElementById("img").src = "https://a.ppy.sh/" + userid + "?" + Date.now();
                 document.getElementById("img").alt = userid;
                 document.getElementById("a").href = "https://osu.ppy.sh/users/" + userid;				
