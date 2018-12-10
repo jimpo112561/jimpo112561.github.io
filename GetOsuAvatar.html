@@ -2,12 +2,12 @@
     <head>
         <script type="text/javascript">
             window.onload = function() {
-              const urlParams = new URLSearchParams(window.location.search);
-				        var userid = parseInt(urlParams.get('userid'), 10);
+                var userid = parseInt(window.location.search.replace("?", ""));
                 document.getElementById("img").src = "https://a.ppy.sh/" + userid + "?" + Date.now();
                 document.getElementById("img").alt = userid;
-                document.getElementById("a").href = "https://osu.ppy.sh/users/" + userid;				
-            };
+                document.getElementById("a").href = "https://osu.ppy.sh/users/" + userid;
+            }
+            ;
         </script>
     </head>
     <body style="margin: 0px 0px 0px 0px; overflow:hidden;">
